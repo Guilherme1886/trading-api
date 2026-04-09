@@ -6,6 +6,30 @@ This project is intentionally small in scope but opinionated in structure: it de
 
 ---
 
+## Live Demo
+
+The API is deployed and publicly available at:
+
+```
+https://trading-api-6irv.onrender.com
+```
+
+> **Note:** The app runs on Render's free tier, which hibernates after 15 minutes of inactivity. The first request after hibernation may take 30-60 seconds while the container spins back up. Subsequent requests respond normally.
+
+Quick test:
+
+```bash
+# List all backtests
+curl https://trading-api-6irv.onrender.com/backtests
+
+# Create a backtest
+curl -X POST https://trading-api-6irv.onrender.com/backtests \
+  -H 'Content-Type: application/json' \
+  -d '{"name":"Demo Test","startDate":"2025-01-01","endDate":"2025-12-31"}'
+```
+
+---
+
 ## Tech Stack
 
 | Layer | Technology |
