@@ -3,9 +3,9 @@ spring:
     name: trading-api
 
   datasource:
-    url: jdbc:postgresql://localhost:5432/trading
-    username: trading
-    password: trading
+    url: ${SPRING_DATASOURCE_URL:jdbc:postgresql://localhost:5432/trading}
+    username: ${SPRING_DATASOURCE_USERNAME:trading}
+    password: ${SPRING_DATASOURCE_PASSWORD:trading}
     driver-class-name: org.postgresql.Driver
 
   jpa:
@@ -14,11 +14,11 @@ spring:
     open-in-view: false
     properties:
       hibernate:
-        format_sql: true
+        format_sql: ${HIBERNATE_FORMAT_SQL:false}
 
   flyway:
     enabled: true
     locations: classpath:db/migration
 
 server:
-  port: 8080
+  port: ${PORT:8080}
